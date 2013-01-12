@@ -1,0 +1,19 @@
+{
+  "name": "jasmine-asyncblock",
+  "repo": "xaethos/jasmine-asyncblock",
+  "description": "Jasmine helper for testing asynchronous processes.",
+  "version": "0.0.1",
+  "keywords": [
+    "jasmine",
+    "async",
+    "waitsfor"
+    ],
+  "dependencies": {},
+  "development": {
+    "bestander/jasmine": "*"
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
