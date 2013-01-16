@@ -1,11 +1,10 @@
-
-# jasmine-asyncblock
+# jasmine-asyncspec
 
   Jasmine helper for testing asynchronous processes
 
 ## Installation
 
-    $ component install xaethos/jasmine-asyncblock
+    $ component install xaethos/jasmine-asyncspec
 
 ## API
 
