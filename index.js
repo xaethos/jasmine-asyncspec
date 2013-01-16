@@ -1,18 +1,31 @@
-function asyncBlock(block, options) {
-  var spec = jasmine.getEnv().currentSpec;
-  var blockRunning = true;
-  var finish = function(error) {
-    blockRunning = false
-    if(error) spec.fail(error);
-  };
+module.exports = function(jasmine) {
 
-  spec.runs(function() { block(finish); });
-  spec.waitsFor(
-    (function() { return !blockRunning; }),
-    options != null ? options.message : void 0,
-    options != null ? options.timeout : void 0
-  );
+  function asyncBlock(block, options) {
+    var spec = jasmine.getEnv().currentSpec;
+    var blockRunning = true;
+    var finish = function(error) {
+      blockRunning = false;
+      if(error) spec.fail(error);
+    };
+
+    spec.runs(function() { block(finish); });
+    spec.waitsFor(
+      (function() { return !blockRunning; }),
+      options.message,
+      options.timeout
+    );
+  }
+
+  return function(spec, options) {
+    options = options != null ? options : {};
+
+    return function() {
+      asyncBlock(spec, {
+        message: options.message || "spec to finish running",
+        timeout: options.timeout
+      });
+    }
+  }
+
 };
-
-module.exports = function(jasmine) { return asyncBlock };
 

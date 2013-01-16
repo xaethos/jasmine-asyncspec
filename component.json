@@ -1,6 +1,6 @@
 {
-  "name": "jasmine-asyncblock",
-  "repo": "xaethos/jasmine-asyncblock",
+  "name": "jasmine-asyncspec",
+  "repo": "xaethos/jasmine-asyncspec",
   "description": "Jasmine helper for testing asynchronous processes.",
   "version": "0.0.1",
   "keywords": [
